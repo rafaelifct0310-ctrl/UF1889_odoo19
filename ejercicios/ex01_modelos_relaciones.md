@@ -51,4 +51,38 @@ Representa cada tutoría realizada o registrada
 
 Cada registro de este modelo representa una interacción concreta:
 
-- 
+- asunto
+- fecha
+- notas
+- alumno al que pertenece
+
+Es la entidad "qué ocurrió"
+
+### 4. Relación entre los modelos
+
+La relación lógica del negocio es:
+- Un alumno puede tener muchas tutorías
+- Una tutoría pertenece a un solo alumno
+
+Esto es una relación 1 a N:
+- 1 alumno
+- N tutorías
+En Odoo, esto se modela así:
+- en `academy.tutoring`: un `Many2one` hacia `academy.student`
+-  en `academy.student`: un `One2many` hacia `academy.tutoring`
+
+### 5. Por qué la relación se diseña así
+No sólo poner código, sino justificarlo.
+
+La relación es 1-N porque:
+- el alumno es la entidad acumuladora de actividad
+- la tutoría es una ocurrencia en el tiempo
+- necesitamos poder contar tutorías por alumno
+- necesitamos navegar desde el alumno a sus tutorías y desde la tutoría al alumno
+
+Dicho de otro modo:
+- `academy.student` responde a "quién es"
+- `academy.tutoring` responde a "qué interacción hubo"
+
+Este es el patrón que aparece en los dominios
+- alumnos - > tutorías
