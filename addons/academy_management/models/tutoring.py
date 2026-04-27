@@ -5,15 +5,19 @@ from odoo import fields, models
 
 class AcademyTutoring(models.Model):
     _name = 'academy.tutoring'
-    _description = 'Tutoring'
+    _description = 'Tutoring online academy'
 
-    name = fields.Char(string='Name', required=True)
+    name = fields.Char(string='Titulo', required=True)
     student_id = fields.Many2one(
-        'academy.student',
+        comodel_name='academy.student',
         string='Student',
-        required=True
+        required=True,
+        ondelete='cascade'
     )
     course = fields.Char(string='Course')
-    date = fields.Date(string='Date')
+    date = fields.Date(
+        string='Date',
+        required=True
+    )
     duration = fields.Float(string='Duration (hours)')
     notes = fields.Text(string='Notes')
