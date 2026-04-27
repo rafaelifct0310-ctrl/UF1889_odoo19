@@ -11,6 +11,9 @@
     'depends': ['base'],
     'data': [
         'security/ir.model.access.csv',
+        'views/student_view.xml',
+        'views/tutoring_view.xml',
+        'views/menu.xml',
     ],
     'installable': True,
     'application': False,
