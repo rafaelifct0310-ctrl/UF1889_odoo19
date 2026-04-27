@@ -9,7 +9,7 @@
 ### Este razonamiento es la base de la práctica
 - primero identificas los datos
 - consultas con ORM
-- después agregas, los muestras y los exportas
+- después agregas, las muestras y los exportas
 
 ### 2. Análisis del caso
 La academia quiere saber:
