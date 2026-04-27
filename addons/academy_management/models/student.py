@@ -17,6 +17,12 @@ class AcademyStudent(models.Model):
     phone = fields.Char(
         string='Phone'
     )
+    birth_date = fields.Date(
+        string='Birth Date'
+    )
+    address = fields.Char(
+        string='Address'
+    )
     active = fields.Boolean(
         string='Activo',
         default=True

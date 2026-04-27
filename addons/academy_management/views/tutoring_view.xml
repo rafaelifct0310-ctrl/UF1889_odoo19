@@ -4,13 +4,13 @@
         <field name="name">academy.tutoring.tree</field>
         <field name="model">academy.tutoring</field>
         <field name="arch" type="xml">
-            <tree string="Tutorings">
+            <list string="Tutorings">
                 <field name="name"/>
                 <field name="student_id"/>
                 <field name="course"/>
                 <field name="date"/>
                 <field name="duration"/>
-            </tree>
+            </list>
         </field>
     </record>
 

@@ -4,13 +4,13 @@
         <field name="name">academy.student.tree</field>
         <field name="model">academy.student</field>
         <field name="arch" type="xml">
-            <tree string="Students">
+            <list string="Students">
                 <field name="name"/>
                 <field name="email"/>
                 <field name="phone"/>
                 <field name="tutoring_count"/>
                 <field name="active"/>
-            </tree>
+            </list>
         </field>
     </record>
 
@@ -38,7 +38,14 @@
                     </group>
                     <notebook>
                         <page string="Tutorías" name="tutoring">
-                            <field name="tutoring_ids"/>
+                            <field name="tutoring_ids">
+                                <list>
+                                    <field name="name"/>
+                                    <field name="date"/>
+                                    <field name="course"/>
+                                    <field name="duration"/>
+                                </list>
+                            </field>
                         </page>
                     </notebook>
                 </sheet>
